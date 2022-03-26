@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="16.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó módosítása">
+         <font>
+            <Font name="Ubuntu Bold" size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="20.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Felhasználónév" />
+      <TextField layoutX="132.0" layoutY="92.0" prefHeight="24.0" prefWidth="453.0" />
+      <Text layoutX="20.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó*" />
+      <Text layoutX="19.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail cím*" />
+      <TextField layoutX="104.0" layoutY="157.0" prefHeight="24.0" prefWidth="481.0" />
+      <TextField layoutX="94.0" layoutY="190.0" prefHeight="24.0" prefWidth="491.0" />
+      <Text layoutX="20.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weboldal*" />
+      <Text layoutX="20.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leírás" />
+      <PasswordField layoutX="72.0" layoutY="124.0" prefHeight="24.0" prefWidth="513.0" />
+      <Text layoutX="23.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Kötelezően kitöltendő adatok" />
+      <TextArea layoutX="70.0" layoutY="241.0" prefHeight="111.0" prefWidth="514.0" />
+      <Button defaultButton="true" layoutX="524.0" layoutY="437.0" mnemonicParsing="false" text="Mentés">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="452.0" layoutY="437.0" mnemonicParsing="false" text="Mégse">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="84.0" fitWidth="81.0" layoutX="510.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/mngpwd.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="22.0" layoutY="409.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="129.0" stylesheets="@css/red_button.css" text="Jelszó törlése" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
