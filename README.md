@@ -3,10 +3,10 @@ A SecureBytes egy jelszókezelő alkalmazás, amiben a felhasználó eltárolhat
 
 ## Használat
 ### Jogosultságok
-A programnak képes arra, hogy több felhasználót kezeljen. Ez azt jelenti, hogy minden felhasználó létrehozhat magának a programon belül egy-egy fiókot (felhasználónév és jelszó páros), majd a saját fiókjába lementheti a saját jelszavait. Ha tehát Béla és Imre létrehoztak maguknak egy-egy saját fiókot, akkor Béla nem érheti el a saját fiókjában Imre jelszavait és fordítva sem. Mindenki csak a saját jelszavait kezelheti.
+A program képes arra, hogy több felhasználót kezeljen. Ez azt jelenti, hogy minden felhasználó létrehozhat magának a programon belül egy-egy fiókot (felhasználónév és jelszó páros), majd a saját fiókjába lementheti a saját jelszavait. Ha tehát Béla és Imre létrehoztak maguknak egy-egy saját fiókot, akkor Béla nem érheti el a saját fiókjában Imre jelszavait és fordítva sem. Mindenki csak a saját jelszavait kezelheti.
 
 ### Biztonság
-A program elindításakor meg kell adnunk az adott fiókhoz tartozó helyes felhasználónév és jelszó kombinációt. Ez fogja a programot feloldani, és így fog a felhasználó hozzáférni a saját (csakis saját) jelszavaihoz. A programban lehet ősége van a felhasználónak a jelszavait lekérdezni, vagy letárolni.
+A program elindításakor meg kell adnunk az adott fiókhoz tartozó helyes felhasználónév és jelszó kombinációt. Ez fogja a programot feloldani, és így fog a felhasználó hozzáférni a saját (csakis saját) jelszavaihoz. A programban lehetősége van a felhasználónak a jelszavait lekérdezni, vagy letárolni.
 
 ### Jelszavak letárolása
 Amikor egy új jelszót szeretnénk letárolni, az alábbi adatokat lehet megadni:
@@ -34,6 +34,3 @@ Látható, hogy a program részsztringek esetén is képes megtalálni a kereset
 ### Licenc
 
 Ez a program a GPL linenc alapján került kiadásra.
-
-
-
