@@ -1,5 +1,5 @@
 # SecureBytes
-A Secure Bytes egy jelszókezelő alkalmazás, amiben a felhasználó eltárolhatja a saját internetes jelszavait, lekérdezheti, és módosíthatja azokat. Ez az alkalmazás Java-ban íródott és a JavaFX szoftverplatformot használja grafikus felületként.
+A SecureBytes egy jelszókezelő alkalmazás, amiben a felhasználó eltárolhatja a saját internetes jelszavait, lekérdezheti, és módosíthatja azokat. Ez az alkalmazás Java-ban íródott és a JavaFX szoftverplatformot használja grafikus felületként.
 
 ## Használat
 ### Jogosultságok
