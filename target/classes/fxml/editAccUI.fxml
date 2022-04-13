@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.editAccUIController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="106.0" layoutX="14.0" layoutY="162.0" opacity="0.36" stroke="BLACK" strokeType="INSIDE" width="398.0" />
+      <Text layoutX="13.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fiókadatok módosítása">
+         <font>
+            <Font name="Ubuntu Bold" size="35.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="76.0" fitWidth="89.0" layoutX="511.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/mnguser.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="14.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Itt módosíthatja a fiókja jelszavát. Amennyiben már nem használja ezt a fiókot, úgy el is távolíthatja." textAlignment="JUSTIFY" wrappingWidth="573.947265625" />
+      <Text layoutX="28.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Új jelszó" />
+      <Text layoutX="29.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Új jelszó mégegyszer" />
+      <PasswordField fx:id="jelszoUjUjra" layoutX="144.0" layoutY="224.0" prefHeight="24.0" prefWidth="258.0" />
+      <Button defaultButton="true" layoutX="511.0" layoutY="362.0" mnemonicParsing="false" onAction="#alkalmazGombLenyomva" text="Alkamaz">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="439.0" layoutY="362.0" mnemonicParsing="false" onAction="#megseGombLenyomva" text="Mégse">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="15.0" layoutX="20.0" layoutY="150.0" stroke="TRANSPARENT" strokeType="INSIDE" width="231.0" />
+      <Text layoutX="25.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Új jelszó megadása">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="15.0" layoutY="288.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" stylesheets="@css/red_button.css" text="Fiók törlése" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="jelszoUj" layoutX="144.0" layoutY="192.0" prefHeight="24.0" prefWidth="258.0" />
+   </children>
+</Pane>
