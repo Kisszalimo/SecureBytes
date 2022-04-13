@@ -1,0 +1,5 @@
+hu\unideb\inf\model\JpaFelhasznaloDAO.class
+hu\unideb\inf\controllers\loginUIController.class
+hu\unideb\inf\controllers\createAccUIController.class
+hu\unideb\inf\model\Felhasznalo.class
+hu\unideb\inf\model\FelhasznaloDAO.class
