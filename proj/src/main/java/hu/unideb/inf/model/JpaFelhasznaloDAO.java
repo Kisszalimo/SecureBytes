@@ -19,6 +19,7 @@ public class JpaFelhasznaloDAO implements FelhasznaloDAO {
 
     @Override
     public void deleteFelhasznalo(Felhasznalo f) {
+        entityManager.getTransaction().begin();
         entityManager.remove(f);
         entityManager.getTransaction().commit();
     }

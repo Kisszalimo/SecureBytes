@@ -32,6 +32,12 @@ public class successUIController {
                 break;
             case 2:
                 sikeruzenet.setText("Sikeres bejelentkezés");
+                break;
+            case 3:
+                sikeruzenet.setText("Sikeres jelszóváltás");
+                break;
+            case 4:
+                sikeruzenet.setText("Felhasználó sikeresen törölve. \nMiután kijelentkezel, már nem tudsz bejelentkezni!");
             default:
                 break;
         }

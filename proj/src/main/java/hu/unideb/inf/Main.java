@@ -12,6 +12,7 @@ public class Main {
     1 - felhasználó sikeresen létrehozva
     2 - sikeres bejelentkezés
     3 - sikeres jelszóváltás
+    4 - sikeres felhasználótörlés
     */
     private static int errorUzenet;
     /*

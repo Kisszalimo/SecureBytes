@@ -41,7 +41,7 @@
             <Font size="20.0" />
          </font>
       </Text>
-      <Button layoutX="15.0" layoutY="288.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="126.0" stylesheets="@css/red_button.css" text="Fiók törlése" textFill="WHITE">
+      <Button layoutX="15.0" layoutY="288.0" mnemonicParsing="false" onAction="#torlesGombLenyomva" prefHeight="39.0" prefWidth="126.0" stylesheets="@css/red_button.css" text="Fiók törlése" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
