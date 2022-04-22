@@ -19,6 +19,7 @@ public class JpaAdatokDao implements AdatokDao{
 
     @Override
     public void deleteAdatok(Adatok a) {
+        entityManager.getTransaction().begin();
         entityManager.remove(a);
         entityManager.getTransaction().commit();
     }

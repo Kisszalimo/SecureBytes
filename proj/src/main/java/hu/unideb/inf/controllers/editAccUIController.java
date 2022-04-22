@@ -2,7 +2,9 @@ package hu.unideb.inf.controllers;
 
 import hu.unideb.inf.Main;
 import hu.unideb.inf.MainApp;
+import hu.unideb.inf.model.Adatok;
 import hu.unideb.inf.model.Felhasznalo;
+import hu.unideb.inf.model.JpaAdatokDao;
 import hu.unideb.inf.model.JpaFelhasznaloDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +16,7 @@ import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.List;
 
 public class editAccUIController {
     private Stage stage;
@@ -52,17 +55,32 @@ public class editAccUIController {
         }
         else {
             JpaFelhasznaloDAO jfd = new JpaFelhasznaloDAO();
-            Felhasznalo felhasznalo = new Felhasznalo();
-            felhasznalo.setFelhasznalonev(Main.getBejelentkezett().getFelhasznalonev());
-            felhasznalo.setJelszo(jelszoUj.getText());
-            felhasznalo.setId(Main.getBejelentkezett().getId());
-            Main.setBejelentkezett(felhasznalo);
-            jfd.updateFelhasznalo(Main.getBejelentkezett());
+            List<Felhasznalo> felhasznalok = jfd.getFelhasznalok();
+            for (int i = 0; i < felhasznalok.size(); i++)
+            {
+                if(felhasznalok.get(i).getFelhasznalonev().equals(Main.getBejelentkezett().getFelhasznalonev()))
+                {
+                    felhasznalok.get(i).setJelszo(jelszoUj.getText());
+                    Main.setBejelentkezett(felhasznalok.get(i));
+                    jfd.updateFelhasznalo(felhasznalok.get(i));
+                    break;
+                }
+            }
             megseGombLenyomva(event);
             Main.setSikerUzenet(3);
             sikerUzenet(event);
             jfd.close();
         }
+    }
+
+    @FXML
+    void torlesGombLenyomva(ActionEvent event) throws IOException, InterruptedException {
+        Stage stageError = new Stage();
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/confirmUI.fxml"));
+        Scene scene = new Scene(loader.load());
+        stageError.setTitle("CONFIRM");
+        stageError.setScene(scene);
+        stageError.show();
     }
 
     void hibaUzenet(ActionEvent event) throws IOException{
@@ -82,5 +100,34 @@ public class editAccUIController {
         stageError.setTitle("SIKER");
         stageError.setScene(scene);
         stageError.show();
+    }
+
+
+    static void torles(int n)
+    {
+        if(n == 1)
+        {
+            JpaAdatokDao jad = new JpaAdatokDao();
+            List<Adatok> adatok = jad.getAdatok();
+            for (int i = 0; i < adatok.size(); i++)
+            {
+                if(Main.getBejelentkezett().getFelhasznalonev().equals(adatok.get(i).getTulajdonos()))
+                {
+                    jad.deleteAdatok(adatok.get(i));
+                }
+            }
+            JpaFelhasznaloDAO jfd = new JpaFelhasznaloDAO();
+            List<Felhasznalo> felhasznalok = jfd.getFelhasznalok();
+            for (int i = 0; i < felhasznalok.size(); i++)
+            {
+                if(Main.getBejelentkezett().getFelhasznalonev().equals(felhasznalok.get(i).getFelhasznalonev()))
+                {
+                    jfd.deleteFelhasznalo(felhasznalok.get(i));
+                    break;
+                }
+            }
+            Felhasznalo semmi = new Felhasznalo();
+            Main.setBejelentkezett(semmi);
+        }
     }
 }
