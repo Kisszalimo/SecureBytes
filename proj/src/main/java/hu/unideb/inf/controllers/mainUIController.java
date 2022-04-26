@@ -12,11 +12,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
+
+import java.util.List;
 
 public class mainUIController {
     private Stage stage;
@@ -40,6 +39,15 @@ public class mainUIController {
 
     @FXML
     private Label bejelentkezettNeve;
+
+    @FXML
+    private ChoiceBox legordulo;
+
+    @FXML
+    private ListView jelszavak;
+
+    @FXML
+    private TextField keresesstring;
 
     @FXML
     void mentesGombLenyomva(ActionEvent event) throws Exception {
@@ -107,6 +115,103 @@ public class mainUIController {
         scene = new Scene(loader);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    void osszesJelszoGombLenyomva(ActionEvent event) throws Exception{
+        jelszavak.getItems().clear();
+
+        JpaAdatokDao jad = new JpaAdatokDao();
+        List<Adatok> adatok = jad.getAdatok();
+        for (int i = 0; i < adatok.size(); i++)
+        {
+            if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()))
+            {
+                jelszavak.getItems().add(adatok.get(i).getWeboldal() + "\n" + adatok.get(i).getEmail());
+            }
+        }
+    }
+
+    @FXML
+    void keresesGombLenyomva(ActionEvent event) throws  Exception{
+        jelszavak.getItems().clear();
+        JpaAdatokDao jad = new JpaAdatokDao();
+        List<Adatok> adatok = jad.getAdatok();
+
+        if(legordulo.getSelectionModel().getSelectedItem() == null)
+        {
+            osszesJelszoGombLenyomva(event);
+        }
+        else if(legordulo.getSelectionModel().getSelectedItem().equals("felhasználónév"))
+        {
+            if(keresesstring == null)
+            {
+                osszesJelszoGombLenyomva(event);
+            }
+            else
+            {
+                for(int i = 0; i < adatok.size(); i++)
+                {
+                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getFelhasznalonev().contains(keresesstring.getText()))
+                    {
+                        jelszavak.getItems().add(adatok.get(i).getWeboldal() + "\n" + adatok.get(i).getEmail());
+                    }
+                }
+            }
+        }
+        else if(legordulo.getSelectionModel().getSelectedItem().equals("jelszó"))
+        {
+            if(keresesstring == null)
+            {
+                osszesJelszoGombLenyomva(event);
+            }
+            else
+            {
+                for(int i = 0; i < adatok.size(); i++)
+                {
+                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getJelszo().contains(keresesstring.getText()))
+                    {
+                        jelszavak.getItems().add(adatok.get(i).getWeboldal() + "\n" + adatok.get(i).getEmail());
+                    }
+                }
+            }
+        }
+        else if(legordulo.getSelectionModel().getSelectedItem().equals("e-mail cím"))
+        {
+            if(keresesstring == null)
+            {
+                osszesJelszoGombLenyomva(event);
+            }
+            else
+            {
+                for(int i = 0; i < adatok.size(); i++)
+                {
+                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getEmail().contains(keresesstring.getText()))
+                    {
+                        jelszavak.getItems().add(adatok.get(i).getWeboldal() + "\n" + adatok.get(i).getEmail());
+                    }
+                }
+            }
+        }
+        else if(legordulo.getSelectionModel().getSelectedItem().equals("weboldal"))
+        {
+            if(keresesstring == null)
+            {
+                osszesJelszoGombLenyomva(event);
+            }
+            else
+            {
+                for(int i = 0; i < adatok.size(); i++)
+                {
+                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getWeboldal().contains(keresesstring.getText()))
+                    {
+                        jelszavak.getItems().add(adatok.get(i).getWeboldal() + "\n" + adatok.get(i).getEmail());
+                    }
+                }
+            }
+        }
+
+        keresesstring.setText("");
     }
 
     void hibaUzenet(ActionEvent event) throws Exception
