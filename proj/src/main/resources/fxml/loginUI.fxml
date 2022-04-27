@@ -44,7 +44,7 @@
             <Font name="Ubuntu Bold" size="35.0" />
          </font>
       </Text>
-      <Text layoutX="18.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A jelszavak megtekintéséhez először jelentkezzen be a saját fiókjával!" textAlignment="JUSTIFY" wrappingWidth="271.00634765625">
+      <Text layoutX="18.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="A jelszavak megtekintéséhez először jelentkezzen be a saját fiókjával!" textAlignment="JUSTIFY" wrappingWidth="271.00634765625">
          <font>
             <Font size="14.0" />
          </font>
@@ -54,13 +54,13 @@
             <Image url="@icons/lock.png" />
          </image>
       </ImageView>
-      <Text layoutX="18.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ha még nincs fiókja, létrehozhat egy újat a program használatához." textAlignment="JUSTIFY" wrappingWidth="271.00634765625">
+      <Text layoutX="18.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Ha még nincs fiókja, létrehozhat egy újat a program használatához." textAlignment="JUSTIFY" wrappingWidth="271.00634765625">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <Text layoutX="18.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Felhasználónév" />
-      <Text layoutX="18.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó" />
+      <Text layoutX="18.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Felhasználónév" />
+      <Text layoutX="18.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Jelszó" />
       <TextField fx:id="fnevLogin" layoutX="128.0" layoutY="196.0" prefHeight="24.0" prefWidth="218.0" />
       <Button defaultButton="true" layoutX="323.0" layoutY="292.0" mnemonicParsing="false" onAction="#bejelentkezesGombLenyomva" text="Bejelentkezés">
          <cursor>

@@ -11,31 +11,48 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.aboutUIController">
    <children>
-      <Text layoutX="132.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Névjegy">
+      <Text layoutX="132.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Névjegy">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <Line endX="250.0" fill="#ffffff00" layoutX="115.0" layoutY="57.0" opacity="0.79" startX="-102.0" strokeMiterLimit="0.0">
+      <Text layoutX="14.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="A programot készítette a Secure Bytes csapata." />
+      <Text layoutX="151.0" layoutY="80.0" opacity="0.46" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszókezelő" />
+      <Text layoutX="18.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Frontend">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="103.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Szalka Gergő" />
+      <Text layoutX="103.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Tóth Tamás" />
+      <Text layoutX="18.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Backend">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="103.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Béres István" />
+      <Text layoutX="103.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Lakatos Bence" />
+      <Button layoutX="299.0" layoutY="252.0" mnemonicParsing="false" onAction="#okGombLenyomva" prefHeight="24.0" prefWidth="67.0" text="OK" />
+      <Line endX="250.0" fill="TRANSPARENT" layoutX="113.0" layoutY="55.0" opacity="0.79" startX="-102.0" strokeMiterLimit="0.0">
          <stroke>
             <LinearGradient endX="1.0" endY="0.30952380952380953" startY="0.319047619047619">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color opacity="0.0" />
                      </color>
                   </Stop>
                   <Stop offset="0.007407407407407408">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.38999998569488525" />
+                        <Color opacity="0.0" />
                      </color>
                   </Stop>
-                  <Stop offset="0.16629629629629644">
+                  <Stop offset="0.1740740740740753">
                      <color>
                         <Color />
                      </color>
                   </Stop>
-                  <Stop offset="0.8333333333333336">
+                  <Stop offset="0.8181481481481483">
                      <color>
                         <Color />
                      </color>
@@ -49,22 +66,5 @@
             </LinearGradient>
          </stroke>
       </Line>
-      <Text layoutX="14.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A programot készítette a Secure Bytes csapata." />
-      <Text layoutX="151.0" layoutY="80.0" opacity="0.46" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszókezelő" />
-      <Text layoutX="18.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frontend">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <Text layoutX="103.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Szalka Gergő" />
-      <Text layoutX="103.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tóth Tamás" />
-      <Text layoutX="18.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Backend">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Text>
-      <Text layoutX="103.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Béres István" />
-      <Text layoutX="103.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lakatos Bence" />
-      <Button layoutX="299.0" layoutY="252.0" mnemonicParsing="false" onAction="#okGombLenyomva" prefHeight="24.0" prefWidth="67.0" text="OK" />
    </children>
 </Pane>

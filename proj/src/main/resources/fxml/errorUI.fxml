@@ -15,31 +15,42 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="223.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.errorUIController">
    <children>
-      <Text layoutX="159.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hiba">
+      <Text layoutX="159.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Hiba">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <Line endX="250.0" fill="#ffffff00" layoutX="115.0" layoutY="47.0" opacity="0.79" startX="-102.0" strokeMiterLimit="0.0">
+      <Text layoutX="23.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="A művelet végrehajtása nem sikerült." />
+      <Button layoutX="304.0" layoutY="185.0" mnemonicParsing="false" onAction="#okGombLenyomva" prefHeight="24.0" prefWidth="64.0" text="OK">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="70.0" fitWidth="64.0" layoutX="299.0" layoutY="76.0" opacity="0.81" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/error.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="hibauzenet" alignment="TOP_LEFT" layoutX="23.0" layoutY="100.0" prefHeight="76.0" prefWidth="245.0" text="&lt;hibaüzenet&gt;" />
+      <Line endX="250.0" fill="TRANSPARENT" layoutX="115.0" layoutY="51.0" opacity="0.38" startX="-102.0" strokeMiterLimit="0.0">
          <stroke>
             <LinearGradient endX="1.0" endY="0.30952380952380953" startY="0.319047619047619">
                <stops>
                   <Stop>
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" />
+                        <Color opacity="0.0" />
                      </color>
                   </Stop>
                   <Stop offset="0.007407407407407408">
                      <color>
-                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.38999998569488525" />
+                        <Color opacity="0.0" />
                      </color>
                   </Stop>
-                  <Stop offset="0.16629629629629644">
+                  <Stop offset="0.1740740740740753">
                      <color>
                         <Color />
                      </color>
                   </Stop>
-                  <Stop offset="0.8333333333333336">
+                  <Stop offset="0.8181481481481483">
                      <color>
                         <Color />
                      </color>
@@ -53,16 +64,5 @@
             </LinearGradient>
          </stroke>
       </Line>
-      <Text layoutX="23.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A művelet végrehajtása nem sikerült." />
-      <Button layoutX="304.0" layoutY="185.0" mnemonicParsing="false" onAction="#okGombLenyomva" prefHeight="24.0" prefWidth="64.0" text="OK">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor></Button>
-      <ImageView fitHeight="70.0" fitWidth="64.0" layoutX="299.0" layoutY="76.0" opacity="0.81" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@icons/error.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="hibauzenet" alignment="TOP_LEFT" layoutX="23.0" layoutY="100.0" prefHeight="76.0" prefWidth="245.0" text="&lt;hibaüzenet&gt;" />
    </children>
 </Pane>
