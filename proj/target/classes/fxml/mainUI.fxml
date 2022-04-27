@@ -134,12 +134,12 @@
                      </font>
                   </Text>
                   <Text layoutX="18.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grafikus felület témája:" />
-                  <RadioButton layoutX="178.0" layoutY="427.0" mnemonicParsing="false" selected="true" text="Világos" />
+                  <RadioButton fx:id="vilagosRadio" layoutX="178.0" layoutY="427.0" mnemonicParsing="false" onAction="#vilagosKivalasztva" selected="true" text="Világos" />
                   <Button layoutX="18.0" layoutY="456.0" mnemonicParsing="false" onAction="#nevjegyGombLenyomva" text="Névjegy">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <RadioButton layoutX="269.0" layoutY="427.0" mnemonicParsing="false" text="Sötét" />
+                  <RadioButton fx:id="sotetRadio" layoutX="269.0" layoutY="427.0" mnemonicParsing="false" onAction="#sotetKivalasztva" text="Sötét" />
                   <Line endX="327.0" fill="#ffffff00" layoutX="254.0" layoutY="237.0" opacity="0.38" startX="-238.0" strokeMiterLimit="0.0">
                      <stroke>
                         <LinearGradient endX="1.0" endY="0.30952380952380953" startY="0.319047619047619">
@@ -173,6 +173,7 @@
                         </LinearGradient>
                      </stroke>
                   </Line>
+                  <Button layoutX="487.0" layoutY="456.0" mnemonicParsing="false" onAction="#kijelentkezesGombLenyomva" prefHeight="25.0" prefWidth="90.0" text="Kijelentkezés" />
                </children>
             </AnchorPane>
          </content>

@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class mainUIController {
@@ -48,6 +49,12 @@ public class mainUIController {
 
     @FXML
     private TextField keresesstring;
+
+    @FXML
+    private RadioButton vilagosRadio;
+
+    @FXML
+    private RadioButton sotetRadio;
 
     @FXML
     void mentesGombLenyomva(ActionEvent event) throws Exception {
@@ -100,7 +107,6 @@ public class mainUIController {
 
     @FXML
     void ujFiokGombLenyomva(ActionEvent event) throws Exception{
-        Main.setBejelentkezett(new Felhasznalo());
         loader = FXMLLoader.load(getClass().getResource("/fxml/createAccUI.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(loader);
@@ -212,6 +218,29 @@ public class mainUIController {
         }
 
         keresesstring.setText("");
+    }
+
+    @FXML
+    void kijelentkezesGombLenyomva(ActionEvent event) throws IOException{
+        loader = FXMLLoader.load(getClass().getResource("/fxml/loginUI.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(loader);
+        stage.setScene(scene);
+        stage.show();
+        Main.setBejelentkezett(new Felhasznalo());
+        Main.setBejelentkezve(false);
+    }
+
+    @FXML
+    void vilagosKivalasztva(ActionEvent event) throws IOException{
+        sotetRadio.setSelected(false);
+        Main.setTema(0);
+    }
+
+    @FXML
+    void sotetKivalasztva(ActionEvent event) throws IOException{
+        vilagosRadio.setSelected(false);
+        Main.setTema(1);
     }
 
     void hibaUzenet(ActionEvent event) throws Exception

@@ -6,6 +6,12 @@ import java.sql.SQLException;
 
 public class Main {
     private static Felhasznalo bejelentkezett = new Felhasznalo();
+    private static boolean bejelentkezve;
+    private static int tema = 0;
+    /*
+    0 - világos
+    1 - sötét
+    */
     private static int sikerUzenet;
     /*
     0 - adatok sikeresen hozaadva
@@ -30,6 +36,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         startDatabase();
         MainApp.main(args);
+        System.exit(0);
     }
 
     private static void startDatabase() throws SQLException {
@@ -58,5 +65,22 @@ public class Main {
 
     public static int getSikerUzenet() {
         return sikerUzenet;
+    }
+
+    public static void setTema(int i){
+        tema = i;
+    }
+
+    public static int getTema() {
+        return tema;
+    }
+
+    public static void setBejelentkezve(boolean b)
+    {
+        bejelentkezve = b;
+    }
+
+    public static boolean getBejelentkezve(){
+        return bejelentkezve;
     }
 }

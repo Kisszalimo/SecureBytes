@@ -62,11 +62,23 @@ public class createAccUIController {
 
     @FXML
     void megseGombLenyomva(ActionEvent event) throws Exception{
-        loader = FXMLLoader.load(getClass().getResource("/fxml/loginUI.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(loader);
-        stage.setScene(scene);
-        stage.show();
+        if(Main.getBejelentkezve())
+        {
+            loader = FXMLLoader.load(getClass().getResource("/fxml/mainUI.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(loader);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else
+        {
+            loader = FXMLLoader.load(getClass().getResource("/fxml/loginUI.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(loader);
+            stage.setScene(scene);
+            stage.show();
+            Main.setBejelentkezett(new Felhasznalo());
+        }
     }
 
     void hibaUzenet(ActionEvent event) throws Exception

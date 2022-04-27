@@ -13,6 +13,7 @@ public class Felhasznalo implements Serializable {
     private int Id;
     private String felhasznalonev;
     private String jelszo;
+    private int tema = 0;
 
     public String getFelhasznalonev() {
         return felhasznalonev;
@@ -36,5 +37,13 @@ public class Felhasznalo implements Serializable {
 
     public void setId(int i){
         Id = i;
+    }
+
+    public void setTema(int i){
+        tema = i;
+    }
+
+    public int getTema(){
+        return tema;
     }
 }

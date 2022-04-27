@@ -65,6 +65,7 @@ public class loginUIController {
                 stage.show();
                 Main.setSikerUzenet(2);
                 sikerUzenet(event);
+                Main.setBejelentkezve(true);
             }
             else
             {
