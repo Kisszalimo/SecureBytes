@@ -67,6 +67,10 @@ public class createAccUIController {
             loader = FXMLLoader.load(getClass().getResource("/fxml/mainUI.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(loader);
+            if(Main.getBejelentkezett().getTema() == 1)
+            {
+                scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+            }
             stage.setScene(scene);
             stage.show();
         }
@@ -75,6 +79,10 @@ public class createAccUIController {
             loader = FXMLLoader.load(getClass().getResource("/fxml/loginUI.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(loader);
+            if(Main.getBejelentkezett().getTema() == 1)
+            {
+                scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+            }
             stage.setScene(scene);
             stage.show();
             Main.setBejelentkezett(new Felhasznalo());
@@ -86,6 +94,10 @@ public class createAccUIController {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/errorUI.fxml"));
         Scene scene = new Scene(loader.load());
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stageError.setTitle("HIBA");
         stageError.setScene(scene);
         stageError.show();
@@ -96,6 +108,10 @@ public class createAccUIController {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/successUI.fxml"));
         Scene scene = new Scene(loader.load());
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stageError.setTitle("SIKER");
         stageError.setScene(scene);
         stageError.show();

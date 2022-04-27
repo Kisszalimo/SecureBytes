@@ -21,6 +21,10 @@ public class confirmUIController {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/successUI.fxml"));
         Scene scene = new Scene(loader.load());
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stageError.setTitle("SIKER");
         stageError.setScene(scene);
         stageError.show();

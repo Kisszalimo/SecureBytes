@@ -97,6 +97,10 @@ public class mainUIController {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/AboutUI.fxml"));
         Scene scene = new Scene(loader.load());
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stageError.setTitle("Névjegy");
         stageError.setScene(scene);
         stageError.show();
@@ -107,6 +111,10 @@ public class mainUIController {
         loader = FXMLLoader.load(getClass().getResource("/fxml/createAccUI.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(loader);
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stage.setScene(scene);
         stage.show();
     }
@@ -116,6 +124,10 @@ public class mainUIController {
         loader = FXMLLoader.load(getClass().getResource("/fxml/editAccUI.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(loader);
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stage.setScene(scene);
         stage.show();
     }
@@ -222,6 +234,10 @@ public class mainUIController {
         loader = FXMLLoader.load(getClass().getResource("/fxml/loginUI.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(loader);
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stage.setScene(scene);
         stage.show();
         Main.setBejelentkezett(new Felhasznalo());
@@ -231,13 +247,13 @@ public class mainUIController {
     @FXML
     void vilagosKivalasztva(ActionEvent event) throws IOException{
         sotetRadio.setSelected(false);
-        setTema(0);
+        setTema(0, event);
     }
 
     @FXML
     void sotetKivalasztva(ActionEvent event) throws IOException{
         vilagosRadio.setSelected(false);
-        setTema(1);
+        setTema(1, event);
     }
 
     void hibaUzenet(ActionEvent event) throws Exception
@@ -245,6 +261,10 @@ public class mainUIController {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/errorUI.fxml"));
         Scene scene = new Scene(loader.load());
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stageError.setTitle("HIBA");
         stageError.setScene(scene);
         stageError.show();
@@ -255,13 +275,16 @@ public class mainUIController {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/successUI.fxml"));
         Scene scene = new Scene(loader.load());
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
         stageError.setTitle("SIKER");
         stageError.setScene(scene);
         stageError.show();
     }
 
-    void setTema(int n)
-    {
+    void setTema(int n, ActionEvent event) throws IOException {
         Main.setTema(n);
         JpaFelhasznaloDAO jfd = new JpaFelhasznaloDAO();
         List<Felhasznalo> felhasznalok = jfd.getFelhasznalok();
@@ -274,6 +297,15 @@ public class mainUIController {
                 jfd.saveFelhasznalo(felhasznalok.get(i));
             }
         }
+        loader = FXMLLoader.load(getClass().getResource("/fxml/mainUI.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(loader);
+        if(Main.getBejelentkezett().getTema() == 1)
+        {
+            scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
