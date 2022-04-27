@@ -2,10 +2,7 @@ package hu.unideb.inf.controllers;
 
 import hu.unideb.inf.Main;
 import hu.unideb.inf.MainApp;
-import hu.unideb.inf.model.Adatok;
-import hu.unideb.inf.model.AdatokDao;
-import hu.unideb.inf.model.Felhasznalo;
-import hu.unideb.inf.model.JpaAdatokDao;
+import hu.unideb.inf.model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -234,13 +231,13 @@ public class mainUIController {
     @FXML
     void vilagosKivalasztva(ActionEvent event) throws IOException{
         sotetRadio.setSelected(false);
-        Main.setTema(0);
+        setTema(0);
     }
 
     @FXML
     void sotetKivalasztva(ActionEvent event) throws IOException{
         vilagosRadio.setSelected(false);
-        Main.setTema(1);
+        setTema(1);
     }
 
     void hibaUzenet(ActionEvent event) throws Exception
@@ -263,8 +260,34 @@ public class mainUIController {
         stageError.show();
     }
 
+    void setTema(int n)
+    {
+        Main.setTema(n);
+        JpaFelhasznaloDAO jfd = new JpaFelhasznaloDAO();
+        List<Felhasznalo> felhasznalok = jfd.getFelhasznalok();
+        for (int i = 0; i < felhasznalok.size(); i++)
+        {
+            if(felhasznalok.get(i).getFelhasznalonev().equals(Main.getBejelentkezett().getFelhasznalonev()))
+            {
+                felhasznalok.get(i).setTema(n);
+                Main.setBejelentkezett(felhasznalok.get(i));
+                jfd.saveFelhasznalo(felhasznalok.get(i));
+            }
+        }
+    }
+
     @FXML
     public void initialize(){
         bejelentkezettNeve.setText(Main.getBejelentkezett().getFelhasznalonev());
+        if(Main.getBejelentkezett().getTema() == 0)
+        {
+            vilagosRadio.setSelected(true);
+            sotetRadio.setSelected(false);
+        }
+        else if(Main.getBejelentkezett().getTema() == 1)
+        {
+            vilagosRadio.setSelected(false);
+            sotetRadio.setSelected(true);
+        }
     }
 }

@@ -14,31 +14,31 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.confirmUIController">
    <children>
-      <Text layoutX="93.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Biztos benne?">
+      <Text layoutX="93.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Biztos benne?">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <Line endX="250.0" fill="TRANSPARENT" layoutX="114.0" layoutY="47.0" opacity="0.38" startX="-102.0" strokeMiterLimit="0.0">
+      <Line endX="250.0" fill="#ffffff00" layoutX="115.0" layoutY="47.0" opacity="0.79" startX="-102.0" strokeMiterLimit="0.0">
          <stroke>
             <LinearGradient endX="1.0" endY="0.30952380952380953" startY="0.319047619047619">
                <stops>
                   <Stop>
                      <color>
-                        <Color opacity="0.0" />
+                        <Color red="1.0" green="1.0" blue="1.0" />
                      </color>
                   </Stop>
                   <Stop offset="0.007407407407407408">
                      <color>
-                        <Color opacity="0.0" />
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.38999998569488525" />
                      </color>
                   </Stop>
-                  <Stop offset="0.1740740740740753">
+                  <Stop offset="0.16629629629629644">
                      <color>
                         <Color />
                      </color>
                   </Stop>
-                  <Stop offset="0.8181481481481483">
+                  <Stop offset="0.8333333333333336">
                      <color>
                         <Color />
                      </color>
@@ -52,8 +52,8 @@
             </LinearGradient>
          </stroke>
       </Line>
-      <Text layoutX="22.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Valóban folytatni szeretné a műveletet?" />
-      <Button defaultButton="true" layoutX="288.0" layoutY="160.0" mnemonicParsing="false" onAction="#folytatasGombLenyomva" prefHeight="24.0" prefWidth="80.0" styleClass="myClass" text="Folytatás">
+      <Text layoutX="22.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valóban folytatni szeretné a műveletet?" />
+      <Button defaultButton="true" layoutX="288.0" layoutY="160.0" mnemonicParsing="false" onAction="#folytatasGombLenyomva" prefHeight="24.0" prefWidth="80.0" text="Folytatás">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>

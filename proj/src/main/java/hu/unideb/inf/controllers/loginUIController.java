@@ -54,10 +54,14 @@ public class loginUIController {
         {
             if (jfd.jelszoMatch(felhasznalok, fnevLogin.getText(), jelszoLogin.getText()))
             {
-                Felhasznalo fh = new Felhasznalo();
-                fh.setFelhasznalonev(fnevLogin.getText());
-                fh.setJelszo(jelszoLogin.getText());
-                Main.setBejelentkezett(fh);
+                for (int i = 0; i < felhasznalok.size(); i++)
+                {
+                    if(felhasznalok.get(i).getFelhasznalonev().equals(fnevLogin.getText()))
+                    {
+                        Main.setBejelentkezett(felhasznalok.get(i));
+                    }
+                }
+
                 loader = FXMLLoader.load(getClass().getResource("/fxml/mainUI.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(loader);
