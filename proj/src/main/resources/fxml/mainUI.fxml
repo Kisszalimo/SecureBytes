@@ -1,40 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.collections.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.mainUIController">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.mainUIController">
   <tabs>
     <Tab closable="false" text="Új jelszó felvétele">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="600.0">
                <children>
-                  <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Új jelszó felvétele">
+                  <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Új jelszó felvétele">
                      <font>
                         <Font name="Ubuntu Bold" size="25.0" />
                      </font>
                   </Text>
-                  <Text layoutX="18.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Felhasználónév" />
+                  <Text layoutX="18.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Felhasználónév" />
                   <TextField fx:id="fnevUj" layoutX="130.0" layoutY="92.0" prefHeight="24.0" prefWidth="453.0" />
-                  <Text layoutX="18.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó*" />
+                  <Text layoutX="18.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Jelszó*" />
                   <Button layoutX="519.0" layoutY="460.0" mnemonicParsing="false" onAction="#mentesGombLenyomva" text="Mentés">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Text layoutX="17.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail cím*" />
+                  <Text layoutX="17.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="E-mail cím*" />
                   <TextField fx:id="emailUj" layoutX="102.0" layoutY="157.0" prefHeight="24.0" prefWidth="481.0" />
                   <TextField fx:id="weboldalUj" layoutX="92.0" layoutY="190.0" prefHeight="24.0" prefWidth="491.0" />
-                  <Text layoutX="18.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weboldal*" />
-                  <Text layoutX="18.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leírás" />
+                  <Text layoutX="18.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Weboldal*" />
+                  <Text layoutX="18.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Leírás" />
                   <PasswordField fx:id="jelszoUj" layoutX="70.0" layoutY="124.0" prefHeight="24.0" prefWidth="513.0" />
-                  <Text layoutX="16.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*Kötelezően kitöltendő adatok" />
+                  <Text layoutX="16.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="*Kötelezően kitöltendő adatok" />
                   <ImageView fitHeight="79.0" fitWidth="80.0" layoutX="512.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@icons/addpwd.png" />
@@ -48,30 +61,21 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="468.0" prefWidth="600.0">
                <children>
-                  <Button layoutX="509.0" layoutY="117.0" mnemonicParsing="false" onAction="#keresesGombLenyomva" text="Keresés">
+                  <Button layoutX="509.0" layoutY="117.0" mnemonicParsing="false" text="Keresés">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <ChoiceBox fx:id="legordulo" layoutX="85.0" layoutY="76.0" prefWidth="150.0">
-                     <items>
-                        <FXCollections fx:factory="observableArrayList">
-                           <String fx:value="felhasználónév" />
-                           <String fx:value="jelszó" />
-                           <String fx:value="e-mail cím" />
-                           <String fx:value="weboldal" />
-                        </FXCollections>
-                     </items>
-                  </ChoiceBox>
-                  <Text layoutX="23.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Keresés" />
-                  <Text layoutX="247.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="alapján:" />
-                  <TextField fx:id="keresesstring" layoutX="23.0" layoutY="117.0" prefHeight="23.0" prefWidth="475.0" />
-                  <Text layoutX="22.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Találatok:" />
-                  <Button layoutX="408.0" layoutY="155.0" mnemonicParsing="false" onAction="#osszesJelszoGombLenyomva" text="Összes jelszó mutatása">
+                  <ChoiceBox layoutX="85.0" layoutY="76.0" prefWidth="150.0" />
+                  <Text layoutX="23.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Keresés" />
+                  <Text layoutX="247.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="alapján:" />
+                  <TextField layoutX="23.0" layoutY="117.0" prefHeight="23.0" prefWidth="475.0" />
+                  <Text layoutX="22.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Találatok:" />
+                  <Button layoutX="408.0" layoutY="155.0" mnemonicParsing="false" text="Összes jelszó mutatása">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <ListView fx:id="jelszavak" layoutX="21.0" layoutY="206.0" prefHeight="272.0" prefWidth="558.0" />
-                  <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó lekérdezése">
+                  <ListView layoutX="21.0" layoutY="206.0" prefHeight="272.0" prefWidth="558.0" />
+                  <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Jelszó lekérdezése">
                      <font>
                         <Font name="Ubuntu Bold" size="25.0" />
                      </font>
@@ -88,7 +92,7 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beállítások">
+                  <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Beállítások">
                      <font>
                         <Font name="Ubuntu Bold" size="25.0" />
                      </font>
@@ -99,7 +103,7 @@
                      </image>
                   </ImageView>
                   <Rectangle disable="true" fill="TRANSPARENT" height="122.0" layoutX="17.0" layoutY="91.0" smooth="false" stroke="#b9b7b7" strokeType="INSIDE" width="366.0" />
-                  <Text layoutX="17.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fiók">
+                  <Text layoutX="17.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Fiók">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -128,38 +132,38 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Text layoutX="17.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Egyéb">
+                  <Text layoutX="17.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Egyéb">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <Text layoutX="18.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grafikus felület témája:" />
-                  <RadioButton fx:id="vilagosRadio" layoutX="178.0" layoutY="427.0" mnemonicParsing="false" onAction="#vilagosKivalasztva" selected="true" text="Világos" />
-                  <Button layoutX="18.0" layoutY="456.0" mnemonicParsing="false" onAction="#nevjegyGombLenyomva" text="Névjegy">
+                  <Text layoutX="18.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Grafikus felület témája:" />
+                  <RadioButton layoutX="182.0" layoutY="302.0" mnemonicParsing="false" selected="true" text="Világos" />
+                  <Button layoutX="16.0" layoutY="423.0" mnemonicParsing="false" onAction="#nevjegyGombLenyomva" prefHeight="24.0" prefWidth="131.0" text="Névjegy">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <RadioButton fx:id="sotetRadio" layoutX="269.0" layoutY="427.0" mnemonicParsing="false" onAction="#sotetKivalasztva" text="Sötét" />
-                  <Line endX="327.0" fill="#ffffff00" layoutX="254.0" layoutY="237.0" opacity="0.38" startX="-238.0" strokeMiterLimit="0.0">
+                  <RadioButton layoutX="279.0" layoutY="302.0" mnemonicParsing="false" text="Sötét" />
+                  <Line endX="438.0" fill="TRANSPARENT" layoutX="147.0" layoutY="238.0" opacity="0.38" startX="-131.0" strokeMiterLimit="0.0">
                      <stroke>
                         <LinearGradient endX="1.0" endY="0.30952380952380953" startY="0.319047619047619">
                            <stops>
                               <Stop>
                                  <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                    <Color opacity="0.0" />
                                  </color>
                               </Stop>
                               <Stop offset="0.007407407407407408">
                                  <color>
-                                    <Color red="1.0" green="1.0" blue="1.0" opacity="0.38999998569488525" />
+                                    <Color opacity="0.0" />
                                  </color>
                               </Stop>
-                              <Stop offset="0.16629629629629644">
+                              <Stop offset="0.1740740740740753">
                                  <color>
                                     <Color />
                                  </color>
                               </Stop>
-                              <Stop offset="0.8333333333333336">
+                              <Stop offset="0.8181481481481483">
                                  <color>
                                     <Color />
                                  </color>
@@ -173,7 +177,44 @@
                         </LinearGradient>
                      </stroke>
                   </Line>
-                  <Button layoutX="487.0" layoutY="456.0" mnemonicParsing="false" onAction="#kijelentkezesGombLenyomva" prefHeight="25.0" prefWidth="90.0" text="Kijelentkezés" />
+                  <Text layoutX="18.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Megjelenés">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Line endX="438.0" fill="TRANSPARENT" layoutX="146.0" layoutY="369.0" opacity="0.38" startX="-131.0" strokeMiterLimit="0.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="0.30952380952380953" startY="0.319047619047619">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.007407407407407408">
+                                 <color>
+                                    <Color opacity="0.0" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.1740740740740753">
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.8181481481481483">
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color opacity="0.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                  </Line>
                </children>
             </AnchorPane>
          </content>
