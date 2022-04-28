@@ -58,17 +58,17 @@ public class mainUIController {
         if(jelszoUj.getText().equals(""))
         {
             Main.setErrorUzenet(3);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         else if(emailUj.getText().equals(""))
         {
             Main.setErrorUzenet(5);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         else if(weboldalUj.getText().equals(""))
         {
             Main.setErrorUzenet(6);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         else
         {
@@ -83,7 +83,7 @@ public class mainUIController {
             jad.saveAdatok(adatok);
             jad.close();
             Main.setSikerUzenet(0);
-            sikerUzenet(event);
+            sikerUzenet();
             fnevUj.setText("");
             jelszoUj.setText("");
             emailUj.setText("");
@@ -231,17 +231,18 @@ public class mainUIController {
 
     @FXML
     void kijelentkezesGombLenyomva(ActionEvent event) throws IOException{
-        loader = FXMLLoader.load(getClass().getResource("/fxml/loginUI.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(loader);
+        Stage stageError = new Stage();
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/confirmUI.fxml"));
+        Scene scene = new Scene(loader.load());
         if(Main.getBejelentkezett().getTema() == 1)
         {
             scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
         }
-        stage.setScene(scene);
-        stage.show();
-        Main.setBejelentkezett(new Felhasznalo());
-        Main.setBejelentkezve(false);
+        stageError.setTitle("CONFIRM");
+        stageError.setScene(scene);
+        stageError.show();
+        editAccUIController.setEventFo(event);
+        Main.setKijelentkezett(true);
     }
 
     @FXML
@@ -256,7 +257,7 @@ public class mainUIController {
         setTema(1, event);
     }
 
-    void hibaUzenet(ActionEvent event) throws Exception
+    void hibaUzenet() throws Exception
     {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/errorUI.fxml"));
@@ -270,7 +271,7 @@ public class mainUIController {
         stageError.show();
     }
 
-    void sikerUzenet(ActionEvent event) throws Exception
+    void sikerUzenet() throws Exception
     {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/successUI.fxml"));
@@ -310,6 +311,8 @@ public class mainUIController {
 
     @FXML
     public void initialize(){
+        Main.setTorolte(false);
+        Main.setKijelentkezett(false);
         bejelentkezettNeve.setText(Main.getBejelentkezett().getFelhasznalonev());
         if(Main.getBejelentkezett().getTema() == 0)
         {

@@ -16,8 +16,17 @@ public class confirmUIController {
 
     @FXML
     void folytatasGombLenyomva(ActionEvent event) throws IOException{
-        editAccUIController.torles(1);
-        Main.setSikerUzenet(4);
+        if(!Main.getKijelentkezett())
+        {
+            Main.setTorolte(true);
+            editAccUIController.torles(1);
+            Main.setSikerUzenet(4);
+        }
+        else
+        {
+            Main.setSikerUzenet(5);
+        }
+        editAccUIController.torlesUtani();
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/successUI.fxml"));
         Scene scene = new Scene(loader.load());
