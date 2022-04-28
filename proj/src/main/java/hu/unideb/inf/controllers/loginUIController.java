@@ -48,11 +48,11 @@ public class loginUIController {
 
         if(fnevLogin.getText().equals("")) {
             Main.setErrorUzenet(2);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         else if(jelszoLogin.getText().equals("")){
             Main.setErrorUzenet(3);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         else if(jfd.szerepelE(felhasznalok, fnevLogin.getText()))
         {
@@ -76,24 +76,24 @@ public class loginUIController {
                 stage.setScene(scene);
                 stage.show();
                 Main.setSikerUzenet(2);
-                sikerUzenet(event);
+                sikerUzenet();
                 Main.setBejelentkezve(true);
             }
             else
             {
                 Main.setErrorUzenet(1);
-                hibaUzenet(event);
+                hibaUzenet();
             }
         }
         else
         {
             Main.setErrorUzenet(0);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         jfd.close();
     }
 
-    void hibaUzenet(ActionEvent event) throws IOException{
+    void hibaUzenet() throws IOException{
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/errorUI.fxml"));
         Scene scene = new Scene(loader.load());
@@ -106,7 +106,7 @@ public class loginUIController {
         stageError.show();
     }
 
-    void sikerUzenet(ActionEvent event) throws Exception
+    void sikerUzenet() throws Exception
     {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/successUI.fxml"));

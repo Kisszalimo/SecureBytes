@@ -51,6 +51,9 @@ public class errorUIController{
             case 8:
                 hibauzenet.setText("Eddig is ez volt a jelszavad");
                 break;
+            case 9:
+                hibauzenet.setText("A minimális jelszóhossz 6 karakter");
+                break;
             default:
                 break;
         }

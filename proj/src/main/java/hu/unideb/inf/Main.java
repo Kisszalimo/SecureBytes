@@ -7,6 +7,8 @@ import java.sql.SQLException;
 public class Main {
     private static Felhasznalo bejelentkezett = new Felhasznalo();
     private static boolean bejelentkezve;
+    private static boolean torolte = false;
+    private static boolean kijelentkezett = false;
     private static int tema = 0;
     /*
     0 - világos
@@ -31,6 +33,7 @@ public class Main {
     6 - írj be egy weboldalt
     7 - két jelszó nem egyezik
     8 - eddig is ez volt a jelszavad
+    9 - minimális jelszóhossz az 6 karakter
     */
 
     public static void main(String[] args) throws SQLException {
@@ -82,5 +85,21 @@ public class Main {
 
     public static boolean getBejelentkezve(){
         return bejelentkezve;
+    }
+
+    public static void setTorolte(boolean b){
+        torolte = b;
+    }
+
+    public static boolean getTorolte(){
+        return torolte;
+    }
+
+    public static void setKijelentkezett(boolean b){
+        torolte = b;
+    }
+
+    public static boolean getKijelentkezett(){
+        return torolte;
     }
 }

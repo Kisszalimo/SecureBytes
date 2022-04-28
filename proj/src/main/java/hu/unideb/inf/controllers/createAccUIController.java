@@ -25,17 +25,29 @@ public class createAccUIController {
     private TextField fnevCreate;
     @FXML
     private PasswordField jelszoCreate;
+    @FXML
+    private PasswordField jelszoMegegyszerCreate;
 
     @FXML
     void letrehozasGombLenyomva(ActionEvent event) throws Exception {
 
         if(fnevCreate.getText().equals("")) {
             Main.setErrorUzenet(2);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         else if(jelszoCreate.getText().equals("")){
             Main.setErrorUzenet(3);
-            hibaUzenet(event);
+            hibaUzenet();
+        }
+        else if(!jelszoMegegyszerCreate.getText().equals(jelszoCreate.getText()))
+        {
+            Main.setErrorUzenet(7);
+            hibaUzenet();
+        }
+        else if(jelszoMegegyszerCreate.getText().length() < 6)
+        {
+            Main.setErrorUzenet(9);
+            hibaUzenet();
         }
         else {
             JpaFelhasznaloDAO jfd = new JpaFelhasznaloDAO();
@@ -49,12 +61,12 @@ public class createAccUIController {
                 Main.setBejelentkezett(felhasznalo);
                 megseGombLenyomva(event);
                 Main.setSikerUzenet(1);
-                sikerUzenet(event);
+                sikerUzenet();
             }
             else
             {
                 Main.setErrorUzenet(4);
-                hibaUzenet(event);
+                hibaUzenet();
             }
             jfd.close();
         }
@@ -89,7 +101,7 @@ public class createAccUIController {
         }
     }
 
-    void hibaUzenet(ActionEvent event) throws Exception
+    void hibaUzenet() throws Exception
     {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/errorUI.fxml"));
@@ -103,7 +115,7 @@ public class createAccUIController {
         stageError.show();
     }
 
-    void sikerUzenet(ActionEvent event) throws Exception
+    void sikerUzenet() throws Exception
     {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/successUI.fxml"));

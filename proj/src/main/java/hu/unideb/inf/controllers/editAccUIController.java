@@ -22,6 +22,7 @@ public class editAccUIController {
     private Stage stage;
     private Scene scene;
     private Parent loader;
+    private static ActionEvent eventFo;
 
     @FXML
     private PasswordField jelszoUj;
@@ -47,15 +48,20 @@ public class editAccUIController {
         if(!jelszoUj.getText().equals(jelszoUjUjra.getText()))
         {
             Main.setErrorUzenet(7);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         else if(jelszoUj.getText().equals("")){
             Main.setErrorUzenet(3);
-            hibaUzenet(event);
+            hibaUzenet();
         }
         else if(jelszoUj.getText().equals(Main.getBejelentkezett().getJelszo())){
             Main.setErrorUzenet(8);
-            hibaUzenet(event);
+            hibaUzenet();
+        }
+        else if(jelszoUj.getText().length() < 6)
+        {
+            Main.setErrorUzenet(9);
+            hibaUzenet();
         }
         else {
             JpaFelhasznaloDAO jfd = new JpaFelhasznaloDAO();
@@ -72,13 +78,13 @@ public class editAccUIController {
             }
             megseGombLenyomva(event);
             Main.setSikerUzenet(3);
-            sikerUzenet(event);
+            sikerUzenet();
             jfd.close();
         }
     }
 
     @FXML
-    void torlesGombLenyomva(ActionEvent event) throws IOException, InterruptedException {
+    void torlesGombLenyomva(ActionEvent event) throws IOException {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/confirmUI.fxml"));
         Scene scene = new Scene(loader.load());
@@ -89,9 +95,10 @@ public class editAccUIController {
         stageError.setTitle("CONFIRM");
         stageError.setScene(scene);
         stageError.show();
+        eventFo = event;
     }
 
-    void hibaUzenet(ActionEvent event) throws IOException{
+    void hibaUzenet() throws IOException{
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/errorUI.fxml"));
         Scene scene = new Scene(loader.load());
@@ -104,7 +111,7 @@ public class editAccUIController {
         stageError.show();
     }
 
-    void sikerUzenet(ActionEvent event) throws Exception
+    void sikerUzenet() throws Exception
     {
         Stage stageError = new Stage();
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/successUI.fxml"));
@@ -118,6 +125,24 @@ public class editAccUIController {
         stageError.show();
     }
 
+    static void torlesUtani() throws IOException{
+        if(Main.getTorolte())
+        {
+            Stage stage;
+            Scene scene;
+            Parent loader;
+
+            loader = FXMLLoader.load(editAccUIController.class.getResource("/fxml/loginUI.fxml"));
+            stage = (Stage)((Node)eventFo.getSource()).getScene().getWindow();
+            scene = new Scene(loader);
+            if(Main.getBejelentkezett().getTema() == 1)
+            {
+                scene.getStylesheets().add(editAccUIController.class.getResource("/fxml/css/dark_theme.css").toExternalForm());
+            }
+            stage.setScene(scene);
+            stage.show();
+        }
+    }
 
     static void torles(int n)
     {
@@ -145,5 +170,10 @@ public class editAccUIController {
             Felhasznalo semmi = new Felhasznalo();
             Main.setBejelentkezett(semmi);
         }
+    }
+
+    public static void setEventFo(ActionEvent event)
+    {
+        eventFo = event;
     }
 }
