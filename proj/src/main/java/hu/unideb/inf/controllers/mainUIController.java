@@ -142,7 +142,7 @@ public class mainUIController {
         {
             if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()))
             {
-                jelszavak.getItems().add(adatok.get(i).getWeboldal() + "\n" + adatok.get(i).getEmail());
+                jelszavak.getItems().add("Felhasználónév: " + adatok.get(i).getFelhasznalonev() + "\nJelszó: " + adatok.get(i).getJelszo() + "\nE-mail cím: " + adatok.get(i).getEmail() + "\nWeboldal: " + adatok.get(i).getWeboldal() + "\nLeírás: " + adatok.get(i).getLeiras());
             }
         }
     }

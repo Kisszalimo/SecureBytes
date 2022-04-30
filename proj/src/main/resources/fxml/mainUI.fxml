@@ -70,7 +70,7 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <ListView fx:id="jelszavak" layoutX="21.0" layoutY="206.0" prefHeight="272.0" prefWidth="558.0" />
+                  <ListView fx:id="jelszavak" layoutX="21.0" layoutY="206.0" prefHeight="279.0" prefWidth="558.0" />
                   <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó lekérdezése">
                      <font>
                         <Font name="Ubuntu Bold" size="25.0" />
