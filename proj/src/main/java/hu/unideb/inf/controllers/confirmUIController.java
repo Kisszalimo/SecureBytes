@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+/*---- confirm UI ----*/
 
 public class confirmUIController {
     private Stage stage;
