@@ -31,28 +31,28 @@ public class errorUIController{
                 hibauzenet.setText("Helytelen jelszó");
                 break;
             case 2:
-                hibauzenet.setText("Írj be felhasználónevet");
+                hibauzenet.setText("Írjon be felhasználónevet");
                 break;
             case 3:
-                hibauzenet.setText("Írj be jelszót!");
+                hibauzenet.setText("Írjon be jelszót!");
                 break;
             case 4:
                 hibauzenet.setText("Ez a felhasználónév már foglalt");
                 break;
             case 5:
-                hibauzenet.setText("Írj be egy e-mail címet");
+                hibauzenet.setText("Írjon be e-mail címet");
                 break;
             case 6:
-                hibauzenet.setText("Írj be egy weboldalt");
+                hibauzenet.setText("Írjon be weboldal nevet");
                 break;
             case 7:
-                hibauzenet.setText("A két jelszó nem egyezik");
+                hibauzenet.setText("A két jelszó nem egyezik meg");
                 break;
             case 8:
-                hibauzenet.setText("Eddig is ez volt a jelszavad");
+                hibauzenet.setText("Az új jelszava megegyezik a régivel");
                 break;
             case 9:
-                hibauzenet.setText("A minimális jelszóhossz 6 karakter");
+                hibauzenet.setText("A minimális jelszóhosszúság 6 karakter");
                 break;
             default:
                 break;

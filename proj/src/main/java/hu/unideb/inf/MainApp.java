@@ -11,7 +11,7 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/loginUI.fxml"));
         Scene scene = new Scene(loader.load());
-        stage.setTitle("SecureBytes");
+        stage.setTitle("SecureBytes jelszókezelő");
         stage.setScene(scene);
         stage.show();
     }

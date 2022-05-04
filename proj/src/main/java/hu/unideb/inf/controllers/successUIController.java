@@ -25,22 +25,22 @@ public class successUIController {
     public void initialize(){
         switch (Main.getSikerUzenet()){
             case 0:
-                sikeruzenet.setText("Adatok sikeresen hozzáadva");
+                sikeruzenet.setText("Bejegyzés sikeresen hozzáadva.");
                 break;
             case 1:
-                sikeruzenet.setText("Felhasználó sikeresen létrehozva");
+                sikeruzenet.setText("Új felhasználó sikeresen létrehozva.");
                 break;
             case 2:
-                sikeruzenet.setText("Sikeres bejelentkezés");
+                sikeruzenet.setText("Sikeres bejelentkezés.");
                 break;
             case 3:
-                sikeruzenet.setText("Sikeres jelszóváltás");
+                sikeruzenet.setText("Sikeres jelszóváltoztatás.");
                 break;
             case 4:
                 sikeruzenet.setText("Felhasználó sikeresen törölve.");
                 break;
             case 5:
-                sikeruzenet.setText("Kijelentkeztél");
+                sikeruzenet.setText("Sikeres kijelentkezés.");
                 break;
             default:
                 break;
