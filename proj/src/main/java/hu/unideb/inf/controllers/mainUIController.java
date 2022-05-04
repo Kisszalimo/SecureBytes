@@ -40,6 +40,7 @@ public class mainUIController {
 
     @FXML
     private ChoiceBox legordulo;
+    //legordulo.setValue("valuename1");
 
     @FXML
     private ListView jelszavak;
@@ -95,7 +96,7 @@ public class mainUIController {
     @FXML
     void nevjegyGombLenyomva(ActionEvent event) throws Exception{
         Stage stageError = new Stage();
-        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/AboutUI.fxml"));
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/aboutUI.fxml"));
         Scene scene = new Scene(loader.load());
         if(Main.getBejelentkezett().getTema() == 1)
         {
