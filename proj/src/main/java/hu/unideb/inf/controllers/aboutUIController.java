@@ -1,3 +1,5 @@
+/*---- about UI ----*/
+
 package hu.unideb.inf.controllers;
 
 import javafx.event.ActionEvent;
