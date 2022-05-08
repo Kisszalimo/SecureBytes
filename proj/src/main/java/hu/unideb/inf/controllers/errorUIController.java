@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/*---- error UI ----*/
 public class errorUIController{
     private Stage stage;
 
