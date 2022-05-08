@@ -33,4 +33,4 @@ Látható, hogy a program részsztringek esetén is képes megtalálni a kereset
 
 ### Licenc
 
-Ez a program a GPL linenc alapján került kiadásra.
+Ez a program a GPL licenc alapján került kiadásra.
