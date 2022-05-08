@@ -10,10 +10,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.editAccUIController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.editAccUIController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="106.0" layoutX="14.0" layoutY="162.0" opacity="0.36" stroke="BLACK" strokeType="INSIDE" width="398.0" />
-      <Text layoutX="13.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fiókadatok módosítása">
+      <Text layoutX="13.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Fiókadatok módosítása">
          <font>
             <Font name="Ubuntu Bold" size="35.0" />
          </font>
@@ -23,9 +23,9 @@
             <Image url="@icons/mnguser.png" />
          </image>
       </ImageView>
-      <Text layoutX="14.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Itt módosíthatja a fiókja jelszavát. Amennyiben már nem használja ezt a fiókot, úgy el is távolíthatja." textAlignment="JUSTIFY" wrappingWidth="573.947265625" />
-      <Text layoutX="28.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Új jelszó" />
-      <Text layoutX="29.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Új jelszó mégegyszer" />
+      <Text layoutX="14.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Itt módosíthatja a fiókja jelszavát. Amennyiben már nem használja ezt a fiókot, úgy el is távolíthatja." textAlignment="JUSTIFY" wrappingWidth="573.947265625" />
+      <Text layoutX="28.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Új jelszó" />
+      <Text layoutX="29.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Új jelszó újra" />
       <PasswordField fx:id="jelszoUjUjra" layoutX="144.0" layoutY="224.0" prefHeight="24.0" prefWidth="258.0" />
       <Button defaultButton="true" layoutX="511.0" layoutY="362.0" mnemonicParsing="false" onAction="#alkalmazGombLenyomva" text="Alkamaz">
          <cursor>
@@ -35,8 +35,8 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="15.0" layoutX="20.0" layoutY="150.0" stroke="TRANSPARENT" strokeType="INSIDE" width="231.0" />
-      <Text layoutX="25.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Új jelszó megadása">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f4f4f4" height="15.0" layoutX="20.0" layoutY="150.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="hideBox" width="205.0" />
+      <Text layoutX="26.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Új jelszó megadása">
          <font>
             <Font size="20.0" />
          </font>

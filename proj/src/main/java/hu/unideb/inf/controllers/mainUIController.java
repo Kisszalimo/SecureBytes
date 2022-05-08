@@ -13,12 +13,15 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class mainUIController {
     private Stage stage;
     private Scene scene;
     private Parent loader;
+    private List<Integer> keresettAdatokID = new ArrayList<>();
 
     @FXML
     private TextField fnevUj;
@@ -136,13 +139,15 @@ public class mainUIController {
     @FXML
     void osszesJelszoGombLenyomva(ActionEvent event) throws Exception{
         jelszavak.getItems().clear();
+        keresettAdatokID.clear();
 
         JpaAdatokDao jad = new JpaAdatokDao();
         List<Adatok> adatok = jad.getAdatok();
         for (int i = 0; i < adatok.size(); i++)
         {
-            if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()))
+            if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev().toLowerCase()))
             {
+                keresettAdatokID.add(adatok.get(i).getId());
                 jelszavak.getItems().add("Felhasználónév: " + adatok.get(i).getFelhasznalonev() + "\nJelszó: " + adatok.get(i).getJelszo() + "\nE-mail cím: " + adatok.get(i).getEmail() + "\nWeboldal: " + adatok.get(i).getWeboldal() + "\nLeírás: " + adatok.get(i).getLeiras());
             }
         }
@@ -153,6 +158,7 @@ public class mainUIController {
         jelszavak.getItems().clear();
         JpaAdatokDao jad = new JpaAdatokDao();
         List<Adatok> adatok = jad.getAdatok();
+        keresettAdatokID.clear();
 
         if(legordulo.getSelectionModel().getSelectedItem() == null)
         {
@@ -168,8 +174,9 @@ public class mainUIController {
             {
                 for(int i = 0; i < adatok.size(); i++)
                 {
-                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getFelhasznalonev().contains(keresesstring.getText()))
+                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getFelhasznalonev().toLowerCase().contains(keresesstring.getText().toLowerCase()))
                     {
+                        keresettAdatokID.add(adatok.get(i).getId());
                         jelszavak.getItems().add("Felhasználónév: " + adatok.get(i).getFelhasznalonev() + "\nJelszó: " + adatok.get(i).getJelszo() + "\nE-mail cím: " + adatok.get(i).getEmail() + "\nWeboldal: " + adatok.get(i).getWeboldal() + "\nLeírás: " + adatok.get(i).getLeiras());
                     }
                 }
@@ -185,8 +192,9 @@ public class mainUIController {
             {
                 for(int i = 0; i < adatok.size(); i++)
                 {
-                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getJelszo().contains(keresesstring.getText()))
+                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getJelszo().toLowerCase().contains(keresesstring.getText().toLowerCase()))
                     {
+                        keresettAdatokID.add(adatok.get(i).getId());
                         jelszavak.getItems().add("Felhasználónév: " + adatok.get(i).getFelhasznalonev() + "\nJelszó: " + adatok.get(i).getJelszo() + "\nE-mail cím: " + adatok.get(i).getEmail() + "\nWeboldal: " + adatok.get(i).getWeboldal() + "\nLeírás: " + adatok.get(i).getLeiras());
                     }
                 }
@@ -202,9 +210,10 @@ public class mainUIController {
             {
                 for(int i = 0; i < adatok.size(); i++)
                 {
-                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getEmail().contains(keresesstring.getText()))
+                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getEmail().toLowerCase().contains(keresesstring.getText().toLowerCase()))
                     {
-                        jelszavak.getItems().add(adatok.get(i).getWeboldal() + "\n" + adatok.get(i).getEmail());
+                        keresettAdatokID.add(adatok.get(i).getId());
+                        jelszavak.getItems().add("Felhasználónév: " + adatok.get(i).getFelhasznalonev() + "\nJelszó: " + adatok.get(i).getJelszo() + "\nE-mail cím: " + adatok.get(i).getEmail() + "\nWeboldal: " + adatok.get(i).getWeboldal() + "\nLeírás: " + adatok.get(i).getLeiras());
                     }
                 }
             }
@@ -219,9 +228,10 @@ public class mainUIController {
             {
                 for(int i = 0; i < adatok.size(); i++)
                 {
-                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getWeboldal().contains(keresesstring.getText()))
+                    if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()) && adatok.get(i).getWeboldal().toLowerCase().contains(keresesstring.getText().toLowerCase()))
                     {
-                        jelszavak.getItems().add(adatok.get(i).getWeboldal() + "\n" + adatok.get(i).getEmail());
+                        keresettAdatokID.add(adatok.get(i).getId());
+                        jelszavak.getItems().add("Felhasználónév: " + adatok.get(i).getFelhasznalonev() + "\nJelszó: " + adatok.get(i).getJelszo() + "\nE-mail cím: " + adatok.get(i).getEmail() + "\nWeboldal: " + adatok.get(i).getWeboldal() + "\nLeírás: " + adatok.get(i).getLeiras());
                     }
                 }
             }
@@ -325,5 +335,21 @@ public class mainUIController {
             vilagosRadio.setSelected(false);
             sotetRadio.setSelected(true);
         }
+    }
+
+
+    public void kijeloltElemTorleseGombLenyomva(ActionEvent event) throws Exception {
+        JpaAdatokDao jad = new JpaAdatokDao();
+        List<Adatok> adatok = jad.getAdatok();
+        for (int i = 0; i < adatok.size(); i++)
+        {
+            if(adatok.get(i).getId() == keresettAdatokID.get(jelszavak.getSelectionModel().getSelectedIndex()))
+            {
+                jad.deleteAdatok(adatok.get(i));
+                break;
+            }
+        }
+
+        keresesGombLenyomva(event);
     }
 }
