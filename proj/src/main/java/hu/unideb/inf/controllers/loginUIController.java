@@ -71,6 +71,20 @@ public class loginUIController {
                 loader = FXMLLoader.load(getClass().getResource("/fxml/mainUI.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(loader);
+
+                if(Main.getBejelentkezett().getAutoTheme())
+                {
+                    Main.setAutoTheme();
+                    for (int i = 0; i < felhasznalok.size(); i++)
+                    {
+                        if(felhasznalok.get(i).getFelhasznalonev().equals(Main.getBejelentkezett().getFelhasznalonev()))
+                        {
+                            felhasznalok.get(i).setTema(Main.getTema());
+                            Main.setBejelentkezett(felhasznalok.get(i));
+                            jfd.saveFelhasznalo(felhasznalok.get(i));
+                        }
+                    }
+                }
                 if(Main.getBejelentkezett().getTema() == 1)
                 {
                     scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());

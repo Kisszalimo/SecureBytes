@@ -1,5 +1,6 @@
 package hu.unideb.inf;
 
+import com.jthemedetecor.OsThemeDetector;
 import hu.unideb.inf.model.Felhasznalo;
 import org.h2.tools.Server;
 import java.sql.SQLException;
@@ -101,5 +102,16 @@ public class Main {
 
     public static boolean getKijelentkezett(){
         return torolte;
+    }
+
+    public static void setAutoTheme(){
+        final OsThemeDetector detector = OsThemeDetector.getDetector();
+        final boolean isDarkThemeUsed = detector.isDark();
+        if (isDarkThemeUsed) {
+            setTema(1);
+        }
+        else {
+            setTema(0);
+        }
     }
 }

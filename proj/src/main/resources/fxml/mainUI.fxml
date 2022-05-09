@@ -80,12 +80,12 @@
                   <Text layoutX="23.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Keresés" />
                   <Text layoutX="247.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="alapján:" />
                   <TextField fx:id="keresesstring" layoutX="23.0" layoutY="117.0" prefHeight="23.0" prefWidth="475.0" />
-                  <Text layoutX="22.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Találatok:" />
-                  <Button layoutX="408.0" layoutY="155.0" mnemonicParsing="false" onAction="#osszesJelszoGombLenyomva" text="Összes jelszó mutatása">
+                  <Text layoutX="22.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Találatok:" />
+                  <Button layoutX="251.0" layoutY="153.0" mnemonicParsing="false" onAction="#osszesJelszoGombLenyomva" text="Összes jelszó mutatása">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <ListView fx:id="jelszavak" layoutX="21.0" layoutY="234.0" prefHeight="251.0" prefWidth="558.0" />
+                  <ListView fx:id="jelszavak" layoutX="21.0" layoutY="204.0" prefHeight="281.0" prefWidth="558.0" />
                   <Text layoutX="14.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Jelszó lekérdezése">
                      <font>
                         <Font name="Ubuntu Bold" size="25.0" />
@@ -96,7 +96,7 @@
                         <Image url="@icons/searchpwd.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="424.0" layoutY="186.0" mnemonicParsing="false" onAction="#kijeloltElemTorleseGombLenyomva" text="Kijelölt elem törlése">
+                  <Button layoutX="431.0" layoutY="153.0" mnemonicParsing="false" onAction="#kijeloltElemTorleseGombLenyomva" stylesheets="@css/red_button.css" text="Kijelölt elem törlése">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -232,6 +232,7 @@
                         </LinearGradient>
                      </stroke>
                   </Line>
+                  <RadioButton fx:id="autoRadio" layoutX="353.0" layoutY="304.0" mnemonicParsing="false" onAction="#autoKivalasztva" text="Auto" />
                </children>
             </AnchorPane>
          </content>

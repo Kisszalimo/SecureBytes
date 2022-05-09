@@ -14,6 +14,7 @@ public class Felhasznalo implements Serializable {
     private String felhasznalonev;
     private String jelszo;
     private int tema = 0;
+    private boolean isAutoThemeUsed;
 
     public String getFelhasznalonev() {
         return felhasznalonev;
@@ -45,5 +46,11 @@ public class Felhasznalo implements Serializable {
 
     public int getTema(){
         return tema;
+    }
+
+    public boolean getAutoTheme() { return isAutoThemeUsed; }
+
+    public void setAutoTheme(boolean isAutoThemeUsed){
+        this.isAutoThemeUsed = isAutoThemeUsed;
     }
 }
