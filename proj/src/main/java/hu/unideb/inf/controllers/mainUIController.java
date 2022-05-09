@@ -43,7 +43,7 @@ public class mainUIController {
 
     @FXML
     private ChoiceBox legordulo;
-    //legordulo.setValue("valuename1");
+
 
     @FXML
     private ListView jelszavak;
@@ -56,6 +56,9 @@ public class mainUIController {
 
     @FXML
     private RadioButton sotetRadio;
+
+    @FXML
+    private RadioButton autoRadio;
 
     @FXML
     void mentesGombLenyomva(ActionEvent event) throws Exception {
@@ -145,7 +148,7 @@ public class mainUIController {
         List<Adatok> adatok = jad.getAdatok();
         for (int i = 0; i < adatok.size(); i++)
         {
-            if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev().toLowerCase()))
+            if(adatok.get(i).getTulajdonos().equals(Main.getBejelentkezett().getFelhasznalonev()))
             {
                 keresettAdatokID.add(adatok.get(i).getId());
                 jelszavak.getItems().add("Felhasználónév: " + adatok.get(i).getFelhasznalonev() + "\nJelszó: " + adatok.get(i).getJelszo() + "\nE-mail cím: " + adatok.get(i).getEmail() + "\nWeboldal: " + adatok.get(i).getWeboldal() + "\nLeírás: " + adatok.get(i).getLeiras());
@@ -259,13 +262,25 @@ public class mainUIController {
     @FXML
     void vilagosKivalasztva(ActionEvent event) throws IOException{
         sotetRadio.setSelected(false);
+        autoRadio.setSelected(false);
+        setAutoTheme(false);
         setTema(0, event);
     }
 
     @FXML
     void sotetKivalasztva(ActionEvent event) throws IOException{
         vilagosRadio.setSelected(false);
+        autoRadio.setSelected(false);
+        setAutoTheme(false);
         setTema(1, event);
+    }
+
+    @FXML
+    void autoKivalasztva(ActionEvent event) throws IOException{
+        vilagosRadio.setSelected(false);
+        sotetRadio.setSelected(false);
+        setAutoTheme(true);
+        setTema(Main.getTema(), event);
     }
 
     void hibaUzenet() throws Exception
@@ -320,23 +335,49 @@ public class mainUIController {
         stage.show();
     }
 
+    void setAutoTheme(boolean state) {
+        if(state)
+        {
+            Main.setAutoTheme();
+        }
+        JpaFelhasznaloDAO jfd = new JpaFelhasznaloDAO();
+        List<Felhasznalo> felhasznalok = jfd.getFelhasznalok();
+
+        for (int i = 0; i < felhasznalok.size(); i++) {
+            if (felhasznalok.get(i).getFelhasznalonev().equals(Main.getBejelentkezett().getFelhasznalonev())) {
+                felhasznalok.get(i).setAutoTheme(state); // true -- false
+                Main.setBejelentkezett(felhasznalok.get(i));
+                jfd.saveFelhasznalo(felhasznalok.get(i));
+            }
+        }
+    }
+
     @FXML
     public void initialize(){
         Main.setTorolte(false);
         Main.setKijelentkezett(false);
         bejelentkezettNeve.setText(Main.getBejelentkezett().getFelhasznalonev());
-        if(Main.getBejelentkezett().getTema() == 0)
-        {
-            vilagosRadio.setSelected(true);
-            sotetRadio.setSelected(false);
-        }
-        else if(Main.getBejelentkezett().getTema() == 1)
-        {
+
+        if(Main.getBejelentkezett().getAutoTheme()) {
             vilagosRadio.setSelected(false);
-            sotetRadio.setSelected(true);
+            sotetRadio.setSelected(false);
+            autoRadio.setSelected(true);
+        }
+        else {
+            if(Main.getBejelentkezett().getTema() == 0)
+            {
+                vilagosRadio.setSelected(true);
+                sotetRadio.setSelected(false);
+                autoRadio.setSelected(false);
+            }
+            else if(Main.getBejelentkezett().getTema() == 1)
+            {
+                vilagosRadio.setSelected(false);
+                sotetRadio.setSelected(true);
+                autoRadio.setSelected(false);
+            }
         }
     }
-
 
     public void kijeloltElemTorleseGombLenyomva(ActionEvent event) throws Exception {
         JpaAdatokDao jad = new JpaAdatokDao();
