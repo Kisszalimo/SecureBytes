@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="198.0" prefWidth="382.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controllers.confirmUIController">
+   <children>
+      <Text layoutX="93.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Biztos benne?">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <Line endX="250.0" fill="TRANSPARENT" layoutX="114.0" layoutY="47.0" opacity="0.38" startX="-102.0" strokeMiterLimit="0.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="0.30952380952380953" startY="0.319047619047619">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color opacity="0.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.007407407407407408">
+                     <color>
+                        <Color opacity="0.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.1740740740740753">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8181481481481483">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color opacity="0.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Text layoutX="22.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Valóban folytatni szeretné a műveletet?" />
+      <Button defaultButton="true" layoutX="288.0" layoutY="160.0" mnemonicParsing="false" onAction="#folytatasGombLenyomva" prefHeight="24.0" prefWidth="80.0" text="Folytatás">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ImageView fitHeight="70.0" fitWidth="64.0" layoutX="302.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons/confirm.png" />
+         </image>
+      </ImageView>
+      <Button cancelButton="true" layoutX="214.0" layoutY="160.0" mnemonicParsing="false" onAction="#megseGombLenyomva" text="Mégse">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</Pane>
