@@ -11,17 +11,22 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import org.jasypt.util.text.StrongTextEncryptor;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Optional;
 
 public class mainUIController {
     private Stage stage;
     private Scene scene;
     private Parent loader;
     private List<Integer> keresettAdatokID = new ArrayList<>();
+
+
 
     @FXML
     private TextField fnevUj;
@@ -43,7 +48,6 @@ public class mainUIController {
 
     @FXML
     private ChoiceBox legordulo;
-
 
     @FXML
     private ListView jelszavak;
@@ -252,7 +256,7 @@ public class mainUIController {
         {
             scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
         }
-        stageError.setTitle("CONFIRM");
+        stageError.setTitle("MEGERŐSÍTÉS");
         stageError.setScene(scene);
         stageError.show();
         editAccUIController.setEventFo(event);
@@ -380,17 +384,37 @@ public class mainUIController {
     }
 
     public void kijeloltElemTorleseGombLenyomva(ActionEvent event) throws Exception {
-        JpaAdatokDao jad = new JpaAdatokDao();
-        List<Adatok> adatok = jad.getAdatok();
-        for (int i = 0; i < adatok.size(); i++)
-        {
-            if(adatok.get(i).getId() == keresettAdatokID.get(jelszavak.getSelectionModel().getSelectedIndex()))
-            {
-                jad.deleteAdatok(adatok.get(i));
-                break;
-            }
-        }
 
-        keresesGombLenyomva(event);
+        if (keresettAdatokID.size() > 0)
+        {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        /*if(Main.getBejelentkezett().getTema() == 1)
+        {
+            alert.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
+        }*/
+            alert.setTitle("MEGERŐSÍTÉS");
+            alert.setHeaderText("Jelszó törlése?");
+            alert.setContentText("Valóban törölni szeretné a kiválasztott bejegyzést?\n\n\n");
+
+            ButtonType buttonTypeOne = new ButtonType("Törlés");
+            ButtonType buttonTypeCancel = new ButtonType("Mégse", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+            alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeCancel);
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == buttonTypeOne){
+                JpaAdatokDao jad = new JpaAdatokDao();
+                List<Adatok> adatok = jad.getAdatok();
+                for (int i = 0; i < adatok.size(); i++)
+                {
+                    if(adatok.get(i).getId() == keresettAdatokID.get(jelszavak.getSelectionModel().getSelectedIndex()))
+                    {
+                        jad.deleteAdatok(adatok.get(i));
+                        break;
+                    }
+                }
+            }
+            keresesGombLenyomva(event);
+        }
     }
 }

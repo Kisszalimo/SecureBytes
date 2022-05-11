@@ -39,6 +39,11 @@
             <artifactId>jSystemThemeDetector</artifactId>
             <version>3.8</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot</artifactId>
+            <version>3.0.4</version>
+        </dependency>
 
         <!-- JPA/Hibernate -->
         <dependency>
@@ -87,6 +92,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
                 <executions>
                     <execution>
                         <goals>

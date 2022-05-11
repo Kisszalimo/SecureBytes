@@ -11,6 +11,7 @@ public class Main {
     private static boolean torolte = false;
     private static boolean kijelentkezett = false;
     private static int tema = 0;
+
     /*
     0 - világos
     1 - sötét

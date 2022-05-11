@@ -1,5 +1,7 @@
 package hu.unideb.inf.controllers;
 
+import com.sun.javafx.geom.Rectangle;
+import com.sun.prism.paint.Color;
 import hu.unideb.inf.Main;
 import hu.unideb.inf.MainApp;
 import hu.unideb.inf.model.Adatok;
@@ -13,8 +15,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.List;
 /*---- editAccUI UI ----*/
@@ -36,6 +40,7 @@ public class editAccUIController {
         loader = FXMLLoader.load(getClass().getResource("/fxml/mainUI.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(loader);
+
         if(Main.getBejelentkezett().getTema() == 1)
         {
             scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
@@ -93,7 +98,7 @@ public class editAccUIController {
         {
             scene.getStylesheets().add(getClass().getResource("/fxml/css/dark_theme.css").toExternalForm());
         }
-        stageError.setTitle("CONFIRM");
+        stageError.setTitle("MEGERŐSÍTÉS");
         stageError.setScene(scene);
         stageError.show();
         eventFo = event;

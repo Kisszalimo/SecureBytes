@@ -1,5 +1,7 @@
 package hu.unideb.inf.model;
 
+import org.jasypt.util.text.StrongTextEncryptor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,45 +20,60 @@ public class Adatok implements Serializable {
     private String weboldal;
     private String leiras;
     private String tulajdonos;
+    private static final String JASYPT_PWD = "yV5hE8XEhkQ4qVG8";
+
+    // Adatok titkosítása
+    private String encrypt(String s) {
+        StrongTextEncryptor textEncryptor = new StrongTextEncryptor();
+        textEncryptor.setPassword(JASYPT_PWD);
+        return textEncryptor.encrypt(s);
+    }
+
+    // Adatok visszafejtése
+    private String decrypt(String s) {
+        StrongTextEncryptor textEncryptor = new StrongTextEncryptor();
+        textEncryptor.setPassword(JASYPT_PWD);
+        return textEncryptor.decrypt(s);
+    }
 
     public String getFelhasznalonev() {
-        return felhasznalonev;
+        return decrypt(felhasznalonev);
     }
 
     public void setFelhasznalonev(String felhasznalonev) {
-        this.felhasznalonev = felhasznalonev;
+        this.felhasznalonev = encrypt(felhasznalonev);
     }
 
     public String getJelszo() {
-        return jelszo;
+        return decrypt(jelszo);
     }
 
     public void setJelszo(String jelszo) {
-        this.jelszo = jelszo;
+        this.jelszo = encrypt(jelszo);
     }
 
     public String getEmail() {
-        return email;
+        return decrypt(email);
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = encrypt(email);
     }
 
     public String getWeboldal() {
-        return weboldal;
+        return decrypt(weboldal);
     }
 
     public void setWeboldal(String weboldal) {
-        this.weboldal = weboldal;
+        this.weboldal = encrypt(weboldal);
     }
 
     public String getLeiras() {
-        return leiras;
+        return decrypt(leiras);
     }
 
     public void setLeiras(String leiras) {
-        this.leiras = leiras;
+        this.leiras = encrypt(leiras);
     }
 
     public int getId(){
