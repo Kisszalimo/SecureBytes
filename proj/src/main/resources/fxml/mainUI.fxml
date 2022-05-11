@@ -38,24 +38,24 @@
                   </Text>
                   <Text layoutX="18.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Felhasználónév" />
                   <TextField fx:id="fnevUj" layoutX="130.0" layoutY="92.0" prefHeight="24.0" prefWidth="453.0" />
+                  <PasswordField fx:id="jelszoUj" layoutX="70.0" layoutY="124.0" prefHeight="24.0" prefWidth="513.0" />
+                  <TextField fx:id="emailUj" layoutX="102.0" layoutY="157.0" prefHeight="24.0" prefWidth="481.0" />
+                  <TextField fx:id="weboldalUj" layoutX="92.0" layoutY="190.0" prefHeight="24.0" prefWidth="491.0" />
+                  <TextArea fx:id="leirasUj" layoutX="68.0" layoutY="241.0" prefHeight="111.0" prefWidth="514.0" />
                   <Text layoutX="18.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Jelszó*" />
                   <Button layoutX="519.0" layoutY="460.0" mnemonicParsing="false" onAction="#mentesGombLenyomva" text="Mentés">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
                   <Text layoutX="17.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="E-mail cím*" />
-                  <TextField fx:id="emailUj" layoutX="102.0" layoutY="157.0" prefHeight="24.0" prefWidth="481.0" />
-                  <TextField fx:id="weboldalUj" layoutX="92.0" layoutY="190.0" prefHeight="24.0" prefWidth="491.0" />
                   <Text layoutX="18.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Weboldal*" />
                   <Text layoutX="18.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="Leírás" />
-                  <PasswordField fx:id="jelszoUj" layoutX="70.0" layoutY="124.0" prefHeight="24.0" prefWidth="513.0" />
                   <Text layoutX="16.0" layoutY="402.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="myClass" text="*Kötelezően kitöltendő adatok" />
                   <ImageView fitHeight="79.0" fitWidth="80.0" layoutX="512.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>
                         <Image url="@icons/addpwd.png" />
                      </image>
                   </ImageView>
-                  <TextArea fx:id="leirasUj" layoutX="68.0" layoutY="241.0" prefHeight="111.0" prefWidth="514.0" />
                </children></AnchorPane>
       </content>
     </Tab>

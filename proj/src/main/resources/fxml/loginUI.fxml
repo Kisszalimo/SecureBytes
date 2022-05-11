@@ -62,6 +62,7 @@
       <Text layoutX="18.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Felhasználónév" />
       <Text layoutX="18.0" layoutY="242.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jelszó" />
       <TextField fx:id="fnevLogin" layoutX="128.0" layoutY="196.0" prefHeight="24.0" prefWidth="218.0" />
+      <PasswordField fx:id="jelszoLogin" layoutX="128.0" layoutY="226.0" prefHeight="24.0" prefWidth="218.0" />
       <Button defaultButton="true" layoutX="323.0" layoutY="292.0" mnemonicParsing="false" onAction="#bejelentkezesGombLenyomva" text="Bejelentkezés">
          <cursor>
             <Cursor fx:constant="HAND" />
@@ -70,6 +71,5 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <PasswordField fx:id="jelszoLogin" layoutX="128.0" layoutY="226.0" prefHeight="24.0" prefWidth="218.0" />
    </children>
 </Pane>

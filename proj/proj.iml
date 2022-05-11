@@ -26,6 +26,8 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.oshi:oshi-core:5.8.6" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: io.github.g00fy2:versioncompare:1.4.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.jetbrains:annotations:22.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ulisesbocchio:jasypt-spring-boot:3.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.jasypt:jasypt:1.9.3" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-entitymanager:5.4.4.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate:hibernate-core:5.4.4.Final" level="project" />
