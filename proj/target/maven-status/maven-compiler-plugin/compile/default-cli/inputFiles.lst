@@ -1,8 +1,16 @@
-D:\Suli\Egyetem\4.felev\SFM\proj\src\main\java\hu\unideb\inf\Main.java
-D:\Suli\Egyetem\4.felev\SFM\proj\src\main\java\hu\unideb\inf\controllers\createAccUIController.java
-D:\Suli\Egyetem\4.felev\SFM\proj\src\main\java\hu\unideb\inf\model\JpaFelhasznaloDAO.java
-D:\Suli\Egyetem\4.felev\SFM\proj\src\main\java\hu\unideb\inf\controllers\loginUIController.java
-D:\Suli\Egyetem\4.felev\SFM\proj\src\main\java\hu\unideb\inf\Application.java
-D:\Suli\Egyetem\4.felev\SFM\proj\src\main\java\hu\unideb\inf\model\FelhasznaloDAO.java
-D:\Suli\Egyetem\4.felev\SFM\proj\src\main\java\hu\unideb\inf\MainApp.java
-D:\Suli\Egyetem\4.felev\SFM\proj\src\main\java\hu\unideb\inf\model\Felhasznalo.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/controllers/confirmUIController.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/controllers/editAccUIController.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/controllers/aboutUIController.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/Main.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/controllers/successUIController.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/model/Adatok.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/model/AdatokDao.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/model/JpaAdatokDao.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/controllers/mainUIController.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/controllers/loginUIController.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/model/JpaFelhasznaloDAO.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/controllers/createAccUIController.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/model/Felhasznalo.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/MainApp.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/controllers/errorUIController.java
+/home/gergo/Asztal/Suli/Szoftverfejlesztés mérnököknek/projekt/v5/proj/src/main/java/hu/unideb/inf/model/FelhasznaloDAO.java
